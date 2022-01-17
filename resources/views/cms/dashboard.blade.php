@@ -21,29 +21,33 @@
         </div>
 @endif
 
+@section('judul')
+Dashboard
+@endsection
+
 @section('body')
 <div class="card text-white bg-primary mb-3" style="width: 25%; height: 5%; position: relative; margin-right: 0.6%; margin-left: 0.6%;">
-  <div class="card-header">Header</div>
+  <div class="card-header">Mahasiswa</div>
   <div class="card-body">
-    <p class="card-text text-white">contoh</p>
+    <p class="card-text text-white">{{$mahasiswa}}</p>
   </div>
 </div>
 <div class="card text-white bg-primary mb-3" style="width: 25%; height: 5%; position: relative; margin-right: 0.6%; margin-left: 0.6%;">
-  <div class="card-header">Header</div>
+  <div class="card-header">Dosen</div>
   <div class="card-body">
-    <p class="card-text text-white">contoh</p>
+    <p class="card-text text-white">{{$dosen}}</p>
   </div>
 </div>
 <div class="card text-white bg-primary mb-3" style="width: 25%; height: 5%; position: relative; margin-right: 0.6%; margin-left: 0.6%;">
-  <div class="card-header">Header</div>
+  <div class="card-header">Seminar</div>
   <div class="card-body">
-    <p class="card-text text-white">contoh</p>
+    <p class="card-text text-white">{{$seminar}}</p>
   </div>
 </div>
 <div class="card text-white bg-primary mb-3" style="width: 25%; height: 5%; position: relative; margin-right: 0.6%; margin-left: 0.6%;">
-  <div class="card-header">Header</div>
+  <div class="card-header">Sidang</div>
   <div class="card-body">
-    <p class="card-text text-white">contoh</p>
+    <p class="card-text text-white">{{$sidang}}</p>
   </div>
 </div>
 @endsection

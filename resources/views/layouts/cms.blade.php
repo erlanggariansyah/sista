@@ -157,16 +157,16 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Seminar TA</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Lihat Seminar</a>
+                            <a href="/seminar">Kelola Seminar</a>
                         </li>
                     </ul>
                 </li>
                 @if(Auth::user()->role == 1)
                 <li>
-                    <a href="#">Mahasiswa</a>
+                    <a href="/mahasiswa">Mahasiswa</a>
                 </li>
                 <li>
-                    <a href="#">Dosen</a>
+                    <a href="/dosen">Dosen</a>
                 </li>
                 @endif
             </ul>
@@ -189,8 +189,8 @@
                 </div>
             </nav>
         </div>
-        <div style="width: 100%; background-color: #646464;">
-        <h1 style="position: relative; height: 10px; top: 0.8%;">HHH</h1>
+        <div style="width: 100%; background-color: #0000000;">
+        <h1 style="position: relative; height: 10px; top: 0.8%;">@yield('judul')</h1>
         <div style="width: 100%; display: flex; margin-top: 7%;">
         @yield('body')
         </div>

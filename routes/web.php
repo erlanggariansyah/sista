@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OtpController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\SeminarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +33,9 @@ Route::get('/lobby', function () {
 
 Route::group(['middleware' => 'active'], function () {
     Route::get('/dashboard', [DashboardController::class, 'read'])->name('dashboard');
+    Route::get('/mahasiswa', [MahasiswaController::class, 'read']);
+    Route::get('/dosen', [DosenController::class, 'read']);
+    Route::get('/seminar', [SeminarController::class, 'read']);
+    Route::get('/seminar/tambah', [SeminarController::class, 'addSeminar']);
+    Route::post('/seminar/tambah', [SeminarController::class, 'addSeminarInput']);
 });
