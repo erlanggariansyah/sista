@@ -41,4 +41,5 @@ Route::group(['middleware' => 'active'], function () {
     Route::get('/seminar/{id}/hapus', [SeminarController::class, 'hapus']);
     Route::get('/seminar/{id}/edit', [SeminarController::class, 'edit']);
     Route::post('/seminar/{id}/edit', [SeminarController::class, 'editPost']);
+    Route::get('/seminar/peserta', [SeminarController::class, 'pesertaSeminar']);
 });

@@ -64,4 +64,8 @@ class SeminarController extends Controller
         
         return redirect('seminar')->with('success', 'Seminar berhasil diedit');
     }
+
+    public function pesertaSeminar() {
+        return view ('cms.peserta_seminar');
+    }
 }

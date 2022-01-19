@@ -160,6 +160,11 @@
                         <li>
                             <a href="/seminar">Kelola Seminar</a>
                         </li>
+                        @if(Auth::user()->role == 1)
+                        <li>
+                            <a href="#">Request Peserta</a>
+                        </li>
+                        @endif
                     </ul>
                 </li>
                 @if(Auth::user()->role == 1)
@@ -183,10 +188,42 @@
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-custom">
-                        <i class="fas fa-align-left"></i>
-                        <span></span>
-                    </button>
+                    <div style="display: inline;">
+                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
+                            <i class="fas fa-align-left"></i>
+                            <span></span>
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
+                            <i class="fas fa-align-left"></i>
+                            <span></span>
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
+                            <i class="fas fa-align-left"></i>
+                            <span></span>
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
+                            <i class="fas fa-align-left"></i>
+                            <span></span>
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
+                            <i class="fas fa-align-left"></i>
+                            <span></span>
+                        </button>
+                        <br>
+                        <br>
+                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
+                            <i class="fas fa-align-left"></i>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
             </nav>
         </div>
