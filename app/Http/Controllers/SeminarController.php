@@ -22,9 +22,28 @@ class SeminarController extends Controller
 
     public function addSeminarInput(Request $request) {
         $validation = Validator::make($request->all(), [
-            
+            'nim' => 'required',
+            'nama_lengkap' => 'required',
+            'prodi' => 'required',
+            'tanggal_seminar' => 'required',
+            'jam_seminar' => 'required',
+            'ruangan' => 'required',
+            'judul' => 'required',
+            'seminar' => 'required',
+            'pembimbing' => 'required',
+            'penguji_1' => 'required',
+            'penguji_2' => 'required'
         ]);
 
-        return view ('cms.seminar')->with('success', 'Seminar berhasil ditambahkan.');
+        if ($validation->fails()) {
+            return redirect()
+            ->back()
+            ->with('error', $validation->messages());
+        }
+
+        $request['user_id'] = auth()->user()->id;
+        
+        seminar::create($request->all());
+        return redirect('seminar')->with('success', 'Seminar berhasil ditambahkan.');
     }
 }

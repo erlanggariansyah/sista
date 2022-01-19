@@ -36,6 +36,6 @@ Route::group(['middleware' => 'active'], function () {
     Route::get('/mahasiswa', [MahasiswaController::class, 'read']);
     Route::get('/dosen', [DosenController::class, 'read']);
     Route::get('/seminar', [SeminarController::class, 'read']);
-    Route::get('/seminar/tambah', [SeminarController::class, 'addSeminar']);
+    Route::get('/seminar/tambah', [SeminarController::class, 'addSeminar'])->name('seminar');
     Route::post('/seminar/tambah', [SeminarController::class, 'addSeminarInput']);
 });

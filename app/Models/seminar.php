@@ -13,6 +13,7 @@ class seminar extends Model
     protected $fillable = [
         'user_id', 'nim', 'nama_lengkap', 'prodi',
         'tanggal_seminar', 'jam_seminar', 'ruangan',
-        'judul', 'seminar'
+        'judul', 'seminar', 'pembimbing', 'penguji_1',
+        'penguji_2'
     ];
 }

@@ -5,7 +5,9 @@ Dosen
 
 @section('body')
 <div style="display: inline;">
+<a href="/dosen/tambah">
 <button type="button" class="btn btn-success">Tambah Dosen</button>
+</a>
 <br>
 <br>
 <div class="table-responsive">

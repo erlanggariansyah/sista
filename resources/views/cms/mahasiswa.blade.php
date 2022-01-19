@@ -5,7 +5,9 @@ Mahasiswa
 
 @section('body')
 <div style="display: inline;">
+<a href="/mahasiswa/tambah">
 <button type="button" class="btn btn-success">Tambah Mahasiswa</button>
+</a>
 <br>
 <br>
 <div class="table-responsive">
