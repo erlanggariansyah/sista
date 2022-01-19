@@ -38,4 +38,7 @@ Route::group(['middleware' => 'active'], function () {
     Route::get('/seminar', [SeminarController::class, 'read']);
     Route::get('/seminar/tambah', [SeminarController::class, 'addSeminar'])->name('seminar');
     Route::post('/seminar/tambah', [SeminarController::class, 'addSeminarInput']);
+    Route::get('/seminar/{id}/hapus', [SeminarController::class, 'hapus']);
+    Route::get('/seminar/{id}/edit', [SeminarController::class, 'edit']);
+    Route::post('/seminar/{id}/edit', [SeminarController::class, 'editPost']);
 });

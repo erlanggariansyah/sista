@@ -5,6 +5,7 @@ Seminar Mahasiswa
 
 @section('body')
 <div style="display: inline;">
+<p>Seminar > Kelola Seminar</p>
 <a href="/seminar/tambah">
 <button type="button" class="btn btn-success">Tambah Seminar</button>
 </a>
@@ -32,8 +33,12 @@ Seminar Mahasiswa
             <td></td>
             <td>{{$s->ruangan}}</td>
             <td>
+            <a href="/seminar/{{$s->id}}/edit">
                 <button type="button" class="btn btn-primary">Edit</button>
+            </a>
+            <a href="/seminar/{{$s->id}}/hapus">
                 <button type="button" class="btn btn-danger">Hapus</button>
+            </a>
             </td>
         </tr>
         <?php endforeach; ?>

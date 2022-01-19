@@ -63,6 +63,7 @@
             color: #fff;
             background: #0F0F0F;
         }
+
         ul ul a {
             font-size: 0.9em !important;
             padding-left: 30px !important;
@@ -190,7 +191,9 @@
             </nav>
         </div>
         <div style="width: 100%; background-color: #0000000;">
-        <h1 style="position: relative; height: 10px; top: 0.8%;">@yield('judul')</h1>
+        <div style="display: flex;">
+            <h1 style="position: relative; height: 0.1px; top: 0.8%;">@yield('judul')</h1>    
+        </div>
         <div style="width: 100%; display: flex; margin-top: 7%;">
         @yield('body')
         </div>

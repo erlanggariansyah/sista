@@ -5,6 +5,7 @@ Mahasiswa
 
 @section('body')
 <div style="display: inline;">
+<p>Mahasiswa > Kelola Mahasiswa</p>
 <a href="/mahasiswa/tambah">
 <button type="button" class="btn btn-success">Tambah Mahasiswa</button>
 </a>

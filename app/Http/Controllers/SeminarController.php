@@ -46,4 +46,22 @@ class SeminarController extends Controller
         seminar::create($request->all());
         return redirect('seminar')->with('success', 'Seminar berhasil ditambahkan.');
     }
+
+    public function hapus ($id) {
+        seminar::where('id', $id)->delete();
+        return redirect()->back();
+    }
+
+    public function edit ($id) {
+        $dosen = User::where('role', 1)->get();
+        $seminar = seminar::where('id', $id)->first();
+
+        return view('cms.form_seminar_edit')->with(['seminar' => $seminar, 'dosen' => $dosen]);
+    }
+
+    public function editPost (Request $request, $id) {
+        seminar::where('id', $id)->update($request->except(['_token']));
+        
+        return redirect('seminar')->with('success', 'Seminar berhasil diedit');
+    }
 }

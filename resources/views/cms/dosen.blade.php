@@ -5,6 +5,7 @@ Dosen
 
 @section('body')
 <div style="display: inline;">
+<p>Dosen > Kelola Dosen</p>
 <a href="/dosen/tambah">
 <button type="button" class="btn btn-success">Tambah Dosen</button>
 </a>
