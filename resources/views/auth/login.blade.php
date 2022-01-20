@@ -100,7 +100,7 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
             </div>
             <button type="submit" class="btn btn-primary m-3 ">{{ __('Login') }}</button>
-            <a href="/register">Registasi user</a>
+            <a href="/register">Registrasi user</a>
         </form>
       </div>
     </div>

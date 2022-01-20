@@ -9,7 +9,7 @@
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-
+	<link rel="icon" href="{{ url('logo.png') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   </head>
@@ -23,7 +23,7 @@
 			</h1>
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Home</a>
+					<a class="nav-link" href="/">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Jadwal</a>
@@ -121,6 +121,7 @@
 		</div>
 	</div>
 </div>
+<br>
 
   </body>
 </html>

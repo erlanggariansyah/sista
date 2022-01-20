@@ -43,12 +43,40 @@ class MahasiswaController extends Controller
             'is_active' => 1
         ]);
 
-        return redirect('mahasiswa')->with('success', 'Mahasiswa berhasil ditambahkan');
+        return redirect('mahasiswa')->with(['success' => 'Mahasiswa berhasil ditambahkan']);
     }
 
     public function hapus ($id) {
         User::where('id', $id)->delete();
 
-        return redirect('mahasiswa')->with('success', 'Mahasiswa berhasil dihapus');
+        return redirect('mahasiswa')->with(['success' => 'Mahasiswa berhasil dihapus']);
+    }
+
+    public function edit ($id) {
+        $user = User::where('id', $id)->first();
+        return view ('cms.form_mahasiswa')->with(["user" => $user]);
+    }
+
+    public function editPost(Request $request, $id) {
+        $validation = Validator::make($request->all(), [
+            'nama_lengkap' => ['required'],
+            'username' => ['required', 'unique:users,username,'.$id],
+            'prodi' => 'required',
+            'email' => ['required', 'unique:users,email,'.$id],
+            'nim' => 'required'
+        ]);
+
+        $user = User::where('id', $id);
+
+        $route = "/mahasiswa/$id/edit";
+
+        if ($validation->fails()) {
+            return redirect($route)->with(['error' => $validation->messages(),
+        'user' => $user->get()]);
+        }
+
+        $user->update($request->except(['_token']));
+
+        return redirect('mahasiswa')->with(['success' => 'Data mahasiswa berhasil diedit.']);
     }
 }

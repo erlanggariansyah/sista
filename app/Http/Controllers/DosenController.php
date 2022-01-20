@@ -43,18 +43,35 @@ class DosenController extends Controller
             'is_active' => 1
         ]);
 
-        return redirect('dosen')->with('success', 'Dosen berhasil ditambahkan');
+        return redirect('dosen')->with(['success' => 'Dosen berhasil ditambahkan']);
     }
 
     public function hapus ($id) {
         User::where('id', $id)->delete();
 
-        return redirect('dosen')->with('success', 'Dosen berhasil dihapus');
+        return redirect('dosen')->with(['success' => 'Dosen berhasil dihapus']);
     }
 
     public function edit ($id) {
         $user = User::where('id', $id)->first();
         
         return view ('cms.edit_dosen')->with(['dosen' => $user]);
+    }
+
+    public function editPost(Request $request, $id) {
+        $validation = Validator::make($request->all(), [
+            'nama_lengkap' => ['required'],
+            'username' => ['required', 'unique:users,email,'.$id],
+            'email' => ['required', 'unique:users,email,'.$id],
+            'prodi' => 'required'
+        ]);
+
+        $user = User::where('id', $id);
+
+        if ($validation->fails()) {
+            return redirect ("/dosen/$id/edit")->with(['error' => $validation->messages()]);
+        }
+
+        return redirect ('dosen')->with(['success' => 'Data dosen berhasil diedit.']);
     }
 }

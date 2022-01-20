@@ -51,4 +51,6 @@ Route::group(['middleware' => 'active'], function () {
     Route::get('/dosen/{id}/edit', [DosenController::class, 'edit']);
     Route::get('/mahasiswa/{id}/delete', [MahasiswaController::class, 'hapus']);
     Route::get('/dosen/{id}/delete', [DosenController::class, 'hapus']);
+    Route::post('/mahasiswa/{id}/edit', [MahasiswaController::class, 'editPost']);
+    Route::post('/dosen/{id}/edit', [DosenController::class, 'editPost']);
 });
