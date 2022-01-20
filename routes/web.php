@@ -31,6 +31,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/lobby', function () {
     return view ('lobby');
 })->name('lobby');
+Route::get('/seminar/{id}/detail', [SeminarController::class, 'getSeminar']);
+Route::get('/seminar/{id}/daftar', [SeminarController::class, 'daftarSeminar']);
+Route::post('/seminar/{id}/daftar', [SeminarController::class, 'daftarSeminarPost']);
+Route::get('/daftar-seminar', [SeminarController::class, 'daftarSeminarForm']);
+Route::post('/seminar/daftar-seminar', [SeminarController::class, 'daftarSeminarFormPost']);
 
 Route::group(['middleware' => 'active'], function () {
     Route::get('/dashboard', [DashboardController::class, 'read'])->name('dashboard');
@@ -53,4 +58,5 @@ Route::group(['middleware' => 'active'], function () {
     Route::get('/dosen/{id}/delete', [DosenController::class, 'hapus']);
     Route::post('/mahasiswa/{id}/edit', [MahasiswaController::class, 'editPost']);
     Route::post('/dosen/{id}/edit', [DosenController::class, 'editPost']);
+    Route::get('/seminar/{id}/peserta', [SeminarController::class, 'peserta']);
 });

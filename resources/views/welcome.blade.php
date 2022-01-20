@@ -29,7 +29,7 @@
 					<a class="nav-link" href="#">Jadwal</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="page2.html">Daftar Seminar</a>
+					<a class="nav-link" href="/daftar-seminar">Daftar Seminar</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Berita</a>
@@ -86,6 +86,9 @@
 						<th>
 							Peserta
 						</th>
+						<th>
+							Action
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -112,7 +115,22 @@
                             {{$s->ruangan}}
 						</td>
 						<td>
-							10 (views)
+							<?php 
+							$count = 0;
+
+							foreach ($member as $m) {
+								if ($m->seminar_id == $s->id) {
+									$count += 1;
+								}
+							}
+
+							echo $count;
+							?>
+						</td>
+						<td>
+							<a href="/seminar/{{$s->id}}/detail">
+								<p>Lihat Seminar</p>
+							</a>
 						</td>
 					</tr>
                 <?php endforeach; ?>

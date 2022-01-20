@@ -38,7 +38,19 @@ Seminar Mahasiswa
                 echo "$s->jam_seminar"." $s->tanggal_seminar";
             ?></td>
             @if(Auth::user()->role == 1)
-            <td></td>
+            <td>
+                <?php 
+                $count = 0;
+
+                foreach ($member as $m) {
+                    if ($m->seminar_id == $s->id) {
+                        $count += 1;
+                    }
+                }
+
+                echo $count." ";
+                ?><a href="/seminar/{{$s->id}}/peserta">Lihat</a>
+            </td>
             <td>{{$s->ruangan}}</td>
             <td>
             <a href="/seminar/{{$s->id}}/edit">

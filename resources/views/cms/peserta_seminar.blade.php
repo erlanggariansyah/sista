@@ -7,9 +7,9 @@ Daftar Peserta Seminar
 <div style="display: inline;">
 <p>Seminar > Peserta Seminar</p>
 <br>
-<h6>Seminar Mahasiswa : </h6>
-<h6>Judul : </h6>
-<h6>Waktu Seminar : </h6>
+<h6>Seminar Mahasiswa : {{$seminar->nama_lengkap}}</h6>
+<h6>Judul : {{$seminar->judul}}</h6>
+<h6>Waktu Seminar : <?php echo $seminar->jam_seminar." ".$seminar->tanggal_seminar; ?></h6>
 <br>
 <h2 style="text-align: center;">Daftar Peserta Seminar</h2>
 <div class="table-responsive">
@@ -22,12 +22,13 @@ Daftar Peserta Seminar
             <th>Status</th>
             <th>Action</th>
         </tr>
+        <?php foreach ($member as $m) : ?>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$m->nim}}</td>
+            <td>{{$m->nama}}</td>
+            <td>{{$m->prodi}}</td>
+            <td><?php echo $seminar->jam_seminar." ".$seminar->tanggal_seminar; ?></td>
+            <td>Diterima</td>
             <td>
             <a href="">
                 <button type="button" class="btn btn-primary">Edit</button>
@@ -37,6 +38,7 @@ Daftar Peserta Seminar
             </a>
             </td>
         </tr>
+        <?php endforeach; ?>
     </table>
 </div>
 <button class="btn btn-success">Tambah Peserta Seminar</button>
