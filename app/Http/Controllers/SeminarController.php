@@ -44,6 +44,7 @@ class SeminarController extends Controller
         $request['user_id'] = auth()->user()->id;
         
         seminar::create($request->all());
+
         return redirect('seminar')->with('success', 'Seminar berhasil ditambahkan.');
     }
 
@@ -67,5 +68,11 @@ class SeminarController extends Controller
 
     public function pesertaSeminar() {
         return view ('cms.peserta_seminar');
+    }
+
+    public function home () {
+        $seminar = seminar::all();
+
+        return view ('welcome')->with(['seminar' => $seminar]);
     }
 }

@@ -6,9 +6,11 @@ Mahasiswa
 @section('body')
 <div style="display: inline;">
 <p>Mahasiswa > Kelola Mahasiswa</p>
+@if(Auth::user()->role == 1)
 <a href="/mahasiswa/tambah">
 <button type="button" class="btn btn-success">Tambah Mahasiswa</button>
 </a>
+@endif
 <br>
 <br>
 <div class="table-responsive">
@@ -41,8 +43,14 @@ Mahasiswa
             echo "Terverifikasi";
         } ?></td>
         <td>
+            <a href="/mahasiswa/{{$mhs->id}}/edit">
             <button type="button" class="btn btn-primary">Edit</button>
+            </a>
+            @if(Auth::user()->role == 1)
+            <a href="/mahasiswa/{{$mhs->id}}/delete">
             <button type="button" class="btn btn-danger">Hapus</button>
+            </a>
+            @endif
         </td>
     </tr>
 <?php endforeach; ?>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         @if (session('error'))
@@ -44,7 +44,6 @@
                             </div>
                         </div>
 
-
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -57,5 +56,52 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="container-fluid m-5 bottom">
+	    <div class="row">
+	      	<div class="col-md-12">
+              <ul class="nav text-">
+                <li class="nav-item ">
+                  <h3>SISTA</h3>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Jadwal</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/seminar">Daftar Seminar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Berita</a>
+                <li class="nav-item">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                <li class="nav-item">
+              </ul>
+				</div>	        
+		</div>
+	  </div>
 </div>
+   
+    <div class="container">
+      <h3 class="text-center">Login</h3>
+      <div class="container border m-5">
+        <form action="{{ route('login') }}" method="POST">
+        @csrf    
+        <div class="form-group m-4">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" name="email">
+            </div>
+            <div class="form-group m-4">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary m-3 ">{{ __('Login') }}</button>
+            <a href="/register">Registasi user</a>
+        </form>
+      </div>
+    </div>
 @endsection

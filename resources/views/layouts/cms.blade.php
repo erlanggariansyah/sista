@@ -151,9 +151,11 @@
     
             <ul class="list-unstyled components">
                 <p class="center"><i class="fa fa-user"></i> &nbsp; {{ Auth::user()->nama_lengkap; }}</p>
+                @if(Auth::user()->role == 1)
                 <li>
                     <a href="/dashboard">Dashboard</a>
                 </li>
+                @endif
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Seminar TA</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -167,10 +169,10 @@
                         @endif
                     </ul>
                 </li>
-                @if(Auth::user()->role == 1)
                 <li>
                     <a href="/mahasiswa">Mahasiswa</a>
                 </li>
+                @if(Auth::user()->role == 1)
                 <li>
                     <a href="/dosen">Dosen</a>
                 </li>
@@ -195,34 +197,22 @@
                         </button>
                         <br>
                         <br>
+                        <a href="{{ url()->previous() }}">
                         <button type="button" id="sidebarCollapse" class="btn btn-custom">
-                            <i class="fas fa-align-left"></i>
+                            <i class="fas fa-arrow-left"></i>
                             <span></span>
                         </button>
+                        </a>
                         <br>
                         <br>
+                        @if(Auth::user()->role == 1)
+                        <a href="/dashboard">
                         <button type="button" id="sidebarCollapse" class="btn btn-custom">
-                            <i class="fas fa-align-left"></i>
+                            <i class="fas fa-chart-line"></i>
                             <span></span>
                         </button>
-                        <br>
-                        <br>
-                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
-                            <i class="fas fa-align-left"></i>
-                            <span></span>
-                        </button>
-                        <br>
-                        <br>
-                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
-                            <i class="fas fa-align-left"></i>
-                            <span></span>
-                        </button>
-                        <br>
-                        <br>
-                        <button type="button" id="sidebarCollapse" class="btn btn-custom">
-                            <i class="fas fa-align-left"></i>
-                            <span></span>
-                        </button>
+                        </a>
+                        @endif
                     </div>
                 </div>
             </nav>

@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/', [SeminarController::class, 'home']);
 Route::get('/register/otp/{id}', [OtpController::class, 'read'])->name('otp');
 Route::post('/register/otp', [OtpController::class, 'verificate']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -42,4 +43,12 @@ Route::group(['middleware' => 'active'], function () {
     Route::get('/seminar/{id}/edit', [SeminarController::class, 'edit']);
     Route::post('/seminar/{id}/edit', [SeminarController::class, 'editPost']);
     Route::get('/seminar/peserta', [SeminarController::class, 'pesertaSeminar']);
+    Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'tambahForm']);
+    Route::get('/dosen/tambah', [DosenController::class, 'tambahForm']);
+    Route::post('/mahasiswa/tambah', [MahasiswaController::class, 'tambahFormPost']);
+    Route::post('/dosen/tambah', [DosenController::class, 'tambahFormPost']);
+    Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit']);
+    Route::get('/dosen/{id}/edit', [DosenController::class, 'edit']);
+    Route::get('/mahasiswa/{id}/delete', [MahasiswaController::class, 'hapus']);
+    Route::get('/dosen/{id}/delete', [DosenController::class, 'hapus']);
 });

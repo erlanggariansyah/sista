@@ -33,8 +33,12 @@ Dosen
             echo "Terverifikasi";
         } ?></td>
         <td>
+            <a href="/dosen/{{$mhs->id}}/edit">
             <button type="button" class="btn btn-primary">Edit</button>
+            </a>
+            <a href="/dosen/{{$mhs->id}}/delete">
             <button type="button" class="btn btn-danger">Hapus</button>
+            </a>
         </td>
     </tr>
 <?php endforeach; ?>
