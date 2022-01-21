@@ -1,25 +1,4 @@
 @extends('layouts.cms')
-@if(session('success'))
-      <div class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-        </div>
-        </div>
-@endif
 
 @section('judul')
 Dashboard
@@ -50,4 +29,35 @@ Dashboard
     <p class="card-text text-white">{{$sidang}}</p>
   </div>
 </div>
+<div class="col-lg-9" style="position: absolute; top: 30%; padding: 7px;">
+                                <br>
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Kategori Seminar
+                                    </div>
+                                    <div class="card-body"><canvas id="myPieChart" width="100%" height="25"></canvas></div>
+                                    <div class="card-footer small text-muted">Diupdate pada {{date('d-m-Y');}}</div>
+                                </div>
+                            </div>
+@endsection
+
+@section('script')
+<script>
+// Pie Chart
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
+
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["Proposal", "Skripsi", "Pendidikan", "Parenting"],
+    datasets: [{
+    data: [{{$proposal}}, {{$skripsi}}, {{$pendidikan}}, {{$parenting}}],
+      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+    }],
+  },
+});
+</script>
 @endsection

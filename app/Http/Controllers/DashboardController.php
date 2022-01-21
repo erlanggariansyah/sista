@@ -13,6 +13,11 @@ class DashboardController extends Controller
         $dosen = User::where('role', 1)->count();
         $seminar = seminar::where('seminar', '!=', 'Skripsi')->count();
         $sidang = seminar::where('seminar', 'Skripsi')->count();
-        return view ('cms.dashboard', compact(['mahasiswa', 'dosen', 'seminar', 'sidang']));
+
+        $proposal = seminar::where('seminar', 'Proposal')->count();
+        $skripsi = seminar::where('seminar', 'Skripsi')->count();
+        $pendidikan = seminar::where('seminar', 'Pendidikan')->count();
+        $parenting = seminar::where('seminar', 'Parenting')->count();
+        return view ('cms.dashboard', compact(['mahasiswa', 'dosen', 'seminar', 'sidang', 'proposal', 'skripsi', 'pendidikan', 'parenting']));
     }
 }

@@ -158,4 +158,10 @@ class SeminarController extends Controller
 
         return view ('cms.peserta_seminar')->with(['seminar' => $seminar, 'member' => $member]);
     }
+
+    public function deletePeserta($id) {
+        member::where('id', $id)->delete();
+        
+        return redirect()->back()->with(['success' => 'Peserta berhasil dihapus.']);
+    }
 }

@@ -30,10 +30,7 @@ Daftar Peserta Seminar
             <td><?php echo $seminar->jam_seminar." ".$seminar->tanggal_seminar; ?></td>
             <td>Diterima</td>
             <td>
-            <a href="">
-                <button type="button" class="btn btn-primary">Edit</button>
-            </a>
-            <a href="">
+            <a href="/seminar/{{$m->id}}/peserta/delete">
                 <button type="button" class="btn btn-danger">Hapus</button>
             </a>
             </td>
@@ -41,6 +38,8 @@ Daftar Peserta Seminar
         <?php endforeach; ?>
     </table>
 </div>
+<a href="/seminar/{{$seminar->id}}/daftar">
 <button class="btn btn-success">Tambah Peserta Seminar</button>
+</a>
 </div>
 @endsection

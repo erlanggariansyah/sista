@@ -59,4 +59,5 @@ Route::group(['middleware' => 'active'], function () {
     Route::post('/mahasiswa/{id}/edit', [MahasiswaController::class, 'editPost']);
     Route::post('/dosen/{id}/edit', [DosenController::class, 'editPost']);
     Route::get('/seminar/{id}/peserta', [SeminarController::class, 'peserta']);
+    Route::get('/seminar/{id}/peserta/delete', [SeminarController::class, 'deletePeserta']);
 });
