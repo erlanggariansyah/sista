@@ -163,11 +163,6 @@
                         <li>
                             <a href="/seminar">Kelola Seminar</a>
                         </li>
-                        @if(Auth::user()->role == 1)
-                        <li>
-                            <a href="#">Request Peserta</a>
-                        </li>
-                        @endif
                     </ul>
                 </li>
                 <li>
