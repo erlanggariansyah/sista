@@ -174,6 +174,12 @@
                     <a href="/dosen">Dosen</a>
                 </li>
                 @endif
+                <li>
+                    <a href="#">Berita</a>
+                </li>
+                <li>
+                    <a href="#">Tentang</a>
+                </li>
             </ul>
             <ul>
                 <li>
